@@ -53,7 +53,7 @@ define Package/ifman/install
 
 	# install config
 	$(INSTALL_DIR) $(1)/etc/ifman
-	$(INSTALL_CONF) ./files/config.sample.yaml $(1)/etc/ifman/config.yaml
+	$(INSTALL_CONF) ./files/config.sample.yaml $(1)/etc/config/ifman
 endef
 
 $(eval $(call GoBinPackage,ifman))
