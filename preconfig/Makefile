@@ -12,7 +12,7 @@ define Package/preconfig
   SECTION:=system
   CATEGORY:=XUEGAONET
   TITLE:=Preconfig
-  DEPENDS:=+luci-ssl-nginx +dnsmasq-full +luci-theme-bootstrap +luci-i18n-base-zh-cn 
+  DEPENDS:=+luci-ssl-nginx +dnsmasq-full +luci-theme-bootstrap +luci-i18n-base-zh-cn +ttyd
   MAINTAINER:=Harris <i@xuegaogg.com>
   URL:=https://blog.xuegaogg.com/
 endef
