@@ -13,6 +13,7 @@ define Package/preconfig
   CATEGORY:=XUEGAONET
   TITLE:=Preconfig
   DEPENDS:=+luci-ssl-nginx +dnsmasq-full +luci-theme-bootstrap +luci-i18n-base-zh-cn +ttyd
+  CONFLICTS:=luci-app-ttyd
   MAINTAINER:=Harris <i@xuegaogg.com>
   URL:=https://blog.xuegaogg.com/
 endef
