@@ -39,20 +39,20 @@ endef
 define Build/Compile
 	$(eval GO_PKG_BUILD_PKG:=$(GO_PKG)/cmd)
 	$(call GoPackage/Build/Compile)
-	mv -f $(GO_PKG_BUILD_BIN_DIR)/cmd $(GO_PKG_BUILD_BIN_DIR)/ifman
+	mv -f $(GO_PKG_BUILD_BIN_DIR)/cmd $(GO_PKG_BUILD_BIN_DIR)/$(GO_PKG)
 endef
 
 define Package/ifman/install
 	$(call GoPackage/Package/Install/Bin,$(PKG_INSTALL_DIR))
 	$(INSTALL_DIR) $(1)/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/bin/ifman $(1)/bin
+	$(INSTALL_BIN) $(GO_PKG_BUILD_BIN_DIR)/$(GO_PKG) $(1)/bin
 
 	# install init.d
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/ifman $(1)/etc/init.d
 
 	# install config
-	$(INSTALL_DIR) $(1)/etc/ifman
+	$(INSTALL_DIR) $(1)/etc/config
 	$(INSTALL_CONF) ./files/config.sample.yaml $(1)/etc/config/ifman
 endef
 
