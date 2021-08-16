@@ -6,7 +6,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ifman
-PKG_VERSION:=1.2.1
+PKG_VERSION:=2.0.3
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
@@ -37,9 +37,8 @@ define Package/ifman/description
 endef
 
 define Build/Compile
-	$(eval GO_PKG_BUILD_PKG:=$(GO_PKG)/cmd)
+	$(eval GO_PKG_BUILD_PKG:=$(GO_PKG))
 	$(call GoPackage/Build/Compile)
-	mv -f $(GO_PKG_BUILD_BIN_DIR)/cmd $(GO_PKG_BUILD_BIN_DIR)/$(GO_PKG)
 endef
 
 define Package/ifman/install

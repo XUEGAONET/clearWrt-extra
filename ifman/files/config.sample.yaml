@@ -1,17 +1,24 @@
 logger:
-  mode: syslog
-  level: info
+  mode: none
+  level: warn
+  syslog_on: true
+
   single:
     path: /tmp/ifman.log
-    perm: 0644
+    permit: 0644
+
   rotate:
     dir: /tmp/ifman
-    age: 1296000
-    cut_period: 86400
+    max_age_sec: 1296000
+    period_sec: 86400
 
 interface:
 
-route:
+addr:
 
-verify:
-  check_period: 60
+rp_filter:
+
+learning:
+
+common:
+  check_period_sec: 10
