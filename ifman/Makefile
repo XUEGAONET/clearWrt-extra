@@ -37,7 +37,7 @@ define Package/ifman/description
 endef
 
 define Build/Compile
-	$(eval GO_PKG_BUILD_PKG:=$(GO_PKG))
+	$(eval GO_PKG_BUILD_PKG:=github.com/XUEGAONET/ifman)
 	$(call GoPackage/Build/Compile)
 endef
 
